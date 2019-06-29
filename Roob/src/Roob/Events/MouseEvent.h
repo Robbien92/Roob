@@ -55,7 +55,7 @@ namespace Roob {
 		MouseButtonEvent(int button)
 			: m_Button(button) {}
 
-		int m_Button
+		int m_Button;
 	};
 
 	class ROOB_API MouseButtonPressedEvent : public MouseButtonEvent {
