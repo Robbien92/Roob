@@ -57,14 +57,17 @@ project "Roob"
 
 	filter "configurations:Debug"
 		defines "ROOB_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ROOB_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "ROOB_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -100,13 +103,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "ROOB_DEBUG"
-		optimize "Off"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ROOB_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "ROOB_DIST"
+		buildoptions "/MD"
 		optimize "On"

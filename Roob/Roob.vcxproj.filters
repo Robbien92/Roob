@@ -40,6 +40,12 @@
     <ClInclude Include="src\Roob\Events\MouseEvent.h">
       <Filter>Roob\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Roob\Layer.h">
+      <Filter>Roob</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Roob\LayerStack.h">
+      <Filter>Roob</Filter>
+    </ClInclude>
     <ClInclude Include="src\Roob\Log.h">
       <Filter>Roob</Filter>
     </ClInclude>
@@ -53,6 +59,12 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Roob\Application.cpp">
+      <Filter>Roob</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Roob\Layer.cpp">
+      <Filter>Roob</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Roob\LayerStack.cpp">
       <Filter>Roob</Filter>
     </ClCompile>
     <ClCompile Include="src\Roob\Log.cpp">

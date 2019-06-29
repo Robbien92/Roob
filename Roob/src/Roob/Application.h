@@ -1,7 +1,8 @@
 #pragma once
 #include "Core.h"
-#include "Events/Event.h"
 #include "Window.h"
+#include "Roob/LayerStack.h"
+#include "Roob/Events/Event.h"
 #include "Roob/Events/ApplicationEvent.h"
 
 namespace Roob {
@@ -14,10 +15,14 @@ namespace Roob {
 
 		void OnEvent(Event& e);
 
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
+
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		LayerStack m_LayerStack;
 	};
 
 	// To be defined in CLIENT

@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -109,6 +110,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -135,6 +137,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -158,6 +161,8 @@
     <ClInclude Include="src\Roob\Events\Event.h" />
     <ClInclude Include="src\Roob\Events\KeyEvent.h" />
     <ClInclude Include="src\Roob\Events\MouseEvent.h" />
+    <ClInclude Include="src\Roob\Layer.h" />
+    <ClInclude Include="src\Roob\LayerStack.h" />
     <ClInclude Include="src\Roob\Log.h" />
     <ClInclude Include="src\Roob\Window.h" />
     <ClInclude Include="src\roobpch.h" />
@@ -165,6 +170,8 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Roob\Application.cpp" />
+    <ClCompile Include="src\Roob\Layer.cpp" />
+    <ClCompile Include="src\Roob\LayerStack.cpp" />
     <ClCompile Include="src\Roob\Log.cpp" />
     <ClCompile Include="src\roobpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
