@@ -10,6 +10,10 @@
 	#error Roob only supports Windows!
 #endif
 
+#ifdef ROOB_DEBUG
+	#define ROOB_ENABLE_ASSERTS
+#endif
+
 #ifdef ROOB_ENABLE_ASSERTS
 	#define ROOB_ASSERT(x, ...) {if(!(x)) { ROOB_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define ROOB_CORE_ASSERT(x, ...) {if(!(x)) { ROOB_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
@@ -19,3 +23,5 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#define ROOB_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)

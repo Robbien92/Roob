@@ -6,7 +6,6 @@ public:
 		: Layer("Example") {}
 
 	void OnUpdate() override {
-		ROOB_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Roob::Event& event) override {
@@ -18,6 +17,7 @@ class Sandbox : public Roob::Application {
 public :
 	Sandbox() {
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Roob::ImGuiLayer());
 	}
 
 	~Sandbox() {
