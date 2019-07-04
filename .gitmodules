@@ -7,3 +7,6 @@
 [submodule "Roob/vendor/imgui"]
 	path = Roob/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Roob/vendor/glm"]
+	path = Roob/vendor/glm
+	url = https://github.com/g-truc/glm

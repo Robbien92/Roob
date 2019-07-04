@@ -1,11 +1,15 @@
 #include <Roob.h>
 
+#include "ImGui/imgui.h"
+
 class ExampleLayer : public Roob::Layer {
 public:
 	ExampleLayer()
 		: Layer("Example") {}
 
 	void OnUpdate() override {
+		if (Roob::Input::IsKeyPressed(ROOB_KEY_TAB))
+			ROOB_TRACE("Tab pressed!");
 	}
 
 	void OnEvent(Roob::Event& event) override {
@@ -17,7 +21,6 @@ class Sandbox : public Roob::Application {
 public :
 	Sandbox() {
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Roob::ImGuiLayer());
 	}
 
 	~Sandbox() {

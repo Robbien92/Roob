@@ -1,7 +1,7 @@
 #include "roobpch.h"
 #include "Application.h"
 #include "Roob/Log.h"
-
+#include "Input.h"
 #include <glad/glad.h>
 
 namespace Roob {
@@ -18,6 +18,9 @@ namespace Roob {
 
 		// Set up event callback
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	Application::~Application() {
@@ -46,9 +49,16 @@ namespace Roob {
 
 	void Application::Run() {
 		while (m_Running) {
+
 			for (Layer* layer : m_LayerStack)
 				// Dispatch layer events
 				layer->OnUpdate();
+
+			m_ImGuiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+				// Dispatch layer events
+				layer->OnImGuiRender();
+			m_ImGuiLayer->End();
 
 			// Dispatch window events
 			m_Window->OnUpdate();

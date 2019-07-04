@@ -4,6 +4,7 @@
 #include "Roob/LayerStack.h"
 #include "Roob/Events/Event.h"
 #include "Roob/Events/ApplicationEvent.h"
+#include "Roob/ImGui/ImGuiLayer.h"
 
 namespace Roob {
 	class ROOB_API Application {
@@ -25,6 +26,7 @@ namespace Roob {
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 

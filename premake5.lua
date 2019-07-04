@@ -1,5 +1,6 @@
 workspace "Roob"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations {
 		"Debug",
@@ -12,11 +13,15 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Roob/vendor/GLFW/include"
 IncludeDir["glad"] = "Roob/vendor/glad/include"
-IncludeDir["imgui"] = "Roob/vendor/imgui"
+IncludeDir["ImGui"] = "Roob/vendor/ImGui"
+IncludeDir["glm"] = "Roob/vendor/glm"
 
-include "Roob/vendor/GLFW"
-include "Roob/vendor/glad"
-include "Roob/vendor/imgui"
+group "Dependencies"
+	include "Roob/vendor/GLFW"
+	include "Roob/vendor/glad"
+	include "Roob/vendor/ImGui"
+
+group ""
 
 project "Roob"
 	location "Roob"
@@ -32,7 +37,9 @@ project "Roob"
 
 	files {
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs {
@@ -40,13 +47,14 @@ project "Roob"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.glad}",
-		"%{IncludeDir.imgui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links {
 		"GLFW",
 		"glad",
-		"imgui",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -61,7 +69,7 @@ project "Roob"
 		}
 
 		postbuildcommands {
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
@@ -95,7 +103,9 @@ project "Sandbox"
 
 	includedirs {
 		"Roob/vendor/spdlog/include",
-		"Roob/src"
+		"Roob/src",
+		"Roob/vendor",
+		"%{IncludeDir.glm}"
 	}
 
 	links {
