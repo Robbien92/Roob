@@ -159,6 +159,7 @@
     <ClInclude Include="src\Roob\Log.h" />
     <ClInclude Include="src\Roob\MouseButtonCodes.h" />
     <ClInclude Include="src\Roob\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Roob\Renderer\Shader.h" />
     <ClInclude Include="src\Roob\Window.h" />
     <ClInclude Include="src\roobpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -539,6 +540,7 @@
     <ClCompile Include="src\roobpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Roob\Renderer\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

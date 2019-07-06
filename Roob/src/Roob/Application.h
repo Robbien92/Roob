@@ -5,6 +5,7 @@
 #include "Roob/Events/Event.h"
 #include "Roob/Events/ApplicationEvent.h"
 #include "Roob/ImGui/ImGuiLayer.h"
+#include "Roob/Renderer/Shader.h"
 
 namespace Roob {
 	class ROOB_API Application {
@@ -33,6 +34,8 @@ namespace Roob {
 		unsigned int m_VertexArray;
 		unsigned int m_VertexBuffer;
 		unsigned int m_IndexBuffer;
+
+		std::unique_ptr<Shader> m_Shader;
 
 	private:
 		static Application* s_Instance;
