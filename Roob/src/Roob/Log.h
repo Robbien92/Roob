@@ -23,11 +23,11 @@ namespace Roob {
 #define ROOB_CORE_INFO(...) ::Roob::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define ROOB_CORE_WARN(...) ::Roob::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define ROOB_CORE_ERROR(...) ::Roob::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define ROOB_CORE_FATAL(...) ::Roob::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define ROOB_CORE_CRITICAL(...) ::Roob::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
 #define ROOB_TRACE(...) ::Roob::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define ROOB_INFO(...) ::Roob::Log::GetClientLogger()->info(__VA_ARGS__)
 #define ROOB_WARN(...) ::Roob::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define ROOB_ERROR(...) ::Roob::Log::GetClientLogger()->error(__VA_ARGS__)
-#define ROOB_FATAL(...) ::Roob::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define ROOB_CRITICAL(...) ::Roob::Log::GetClientLogger()->critical(__VA_ARGS__)
