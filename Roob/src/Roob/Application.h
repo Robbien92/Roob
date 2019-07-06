@@ -6,6 +6,7 @@
 #include "Roob/Events/ApplicationEvent.h"
 #include "Roob/ImGui/ImGuiLayer.h"
 #include "Roob/Renderer/Shader.h"
+#include "Roob/Renderer/Buffer.h"
 
 namespace Roob {
 	class ROOB_API Application {
@@ -32,8 +33,8 @@ namespace Roob {
 		LayerStack m_LayerStack;
 
 		unsigned int m_VertexArray;
-		unsigned int m_VertexBuffer;
-		unsigned int m_IndexBuffer;
+		std::unique_ptr<VertexBuffer> m_VertexBuffer;
+		std::unique_ptr<IndexBuffer> m_IndexBuffer;
 
 		std::unique_ptr<Shader> m_Shader;
 
